@@ -1,0 +1,83 @@
+<Main>:
+    size_hint: 1, 1
+    pos_hint: {'x': 0, 'y': 0}
+    do_default_tab: False
+
+    TabbedPanelItem:
+        text: 'Make Drinks'
+        BoxLayout:
+            orientation: 'horizontal'
+            Label:
+                text: 'Tequila Sunrise'
+            Label:
+                text: 'Vodka Tonic'
+
+    TabbedPanelItem:
+        text: 'Configure'
+        BoxLayout:
+            orientation: 'horizontal'
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: 'Vodka'
+                Label:
+                    text: 'Gin'
+                Label:
+                    text: 'Rum'
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: 'Tequila'
+                Label:
+                    text: 'Whiskey'
+                Label:
+                    text: 'Brandy'
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: 'Tonic'
+                Label:
+                    text: 'Sprite'
+                Label:
+                    text: 'Coke'
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: 'Orange Juice'
+                Label:
+                    text: 'Lemonade'
+                Label:
+                    text: 'Margarita Mix'
+
+    TabbedPanelItem:
+        text: 'Help'
+        BoxLayout:
+            Label:
+                text: 'Second tab content area'
+            Button:
+                text: 'Button that does nothing'
+                
+    TabbedPanelItem:
+        text: 'Debug'
+        BoxLayout:
+            orientation: 'horizontal'
+            Button:
+                text: 'Test Pump 1'
+                size_hint: 1, 0.5
+                on_press: root.activate_pump()
+            Button:
+                text: 'Test Pump 2'
+                size_hint: 1, 0.5
+            Button:
+                text: 'Test Pump 3'
+                size_hint: 1, 0.5
+            Button:
+                text: 'Test Pump 4'
+                size_hint: 1, 0.5
+            Button:
+                text: 'Test Pump 5'
+                size_hint: 1, 0.5
+            Button:
+                text: 'Test Pump 6'
+                size_hint: 1, 0.5
+
