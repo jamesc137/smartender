@@ -2,33 +2,33 @@
 	"drinks": [{
 			"name": "Rum & Coke",
 			"ingredients": [{
-				"rum": 3
+				"rum": 50
 			}, {
-				"coke": 6
+				"coke": 118
 			}]
 		},
 		{
 			"name": "Screw Driver",
 			"ingredients": [{
-				"vodka": 3
+				"vodka": 52
 			}, {
-				"oj": 6
+				"oj": 103
 			}]
 		},
 		{
 			"name": "Mimosa",
 			"ingredients": [{
-				"champaigne": 3
+				"champaigne": 73
 			}, {
-				"oj": 6
+				"oj": 73
 			}]
 		},
 		{
 			"name": "Tequila Sunrise",
 			"ingredients": [{
-				"tequila": 3
+				"tequila": 44
 			}, {
-				"oj": 6
+				"oj": 88
 			}]
 		}
 	]

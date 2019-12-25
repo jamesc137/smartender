@@ -60,21 +60,11 @@ class Main(TabbedPanel):
         if drink == "rum_and_coke":
             ingredient1 = list(data['drinks'][0]['ingredients'][0].values())[0]
             ingredient2 = list(data['drinks'][0]['ingredients'][1].values())[0]
+            #Rum
             GPIO.output(17, GPIO.LOW)
             time.sleep(ingredient1)
             GPIO.output(17, GPIO.HIGH)
-
-            GPIO.output(22, GPIO.LOW)
-            time.sleep(ingredient2)
-            GPIO.output(22, GPIO.HIGH)
-            
-        if drink == "screw_driver":
-            ingredient1 = list(data['drinks'][0]['ingredients'][0].values())[0]
-            ingredient2 = list(data['drinks'][0]['ingredients'][1].values())[0]
-            GPIO.output(17, GPIO.LOW)
-            time.sleep(ingredient1)
-            GPIO.output(17, GPIO.HIGH)
-
+            #Coke
             GPIO.output(22, GPIO.LOW)
             time.sleep(ingredient2)
             GPIO.output(22, GPIO.HIGH)
@@ -82,35 +72,38 @@ class Main(TabbedPanel):
         if drink == "screw_driver":
             ingredient1 = list(data['drinks'][0]['ingredients'][0].values())[0]
             ingredient2 = list(data['drinks'][0]['ingredients'][1].values())[0]
-            GPIO.output(17, GPIO.LOW)
+            #Vodka
+            GPIO.output(23, GPIO.LOW)
             time.sleep(ingredient1)
-            GPIO.output(17, GPIO.HIGH)
-
-            GPIO.output(22, GPIO.LOW)
+            GPIO.output(23, GPIO.HIGH)
+            #OJ
+            GPIO.output(24, GPIO.LOW)
             time.sleep(ingredient2)
-            GPIO.output(22, GPIO.HIGH)
-            
+            GPIO.output(24, GPIO.HIGH)
+
         if drink == "mimosa":
             ingredient1 = list(data['drinks'][0]['ingredients'][0].values())[0]
             ingredient2 = list(data['drinks'][0]['ingredients'][1].values())[0]
-            GPIO.output(17, GPIO.LOW)
+            #champaigne
+            GPIO.output(27, GPIO.LOW)
             time.sleep(ingredient1)
-            GPIO.output(17, GPIO.HIGH)
-
-            GPIO.output(22, GPIO.LOW)
+            GPIO.output(27, GPIO.HIGH)
+            #OJ
+            GPIO.output(24, GPIO.LOW)
             time.sleep(ingredient2)
-            GPIO.output(22, GPIO.HIGH)
-            
+            GPIO.output(24, GPIO.HIGH)
+
         if drink == "tequila_sunrise":
             ingredient1 = list(data['drinks'][0]['ingredients'][0].values())[0]
             ingredient2 = list(data['drinks'][0]['ingredients'][1].values())[0]
-            GPIO.output(17, GPIO.LOW)
+            #Tequila
+            GPIO.output(25, GPIO.LOW)
             time.sleep(ingredient1)
-            GPIO.output(17, GPIO.HIGH)
-
-            GPIO.output(22, GPIO.LOW)
+            GPIO.output(25, GPIO.HIGH)
+            #OJ
+            GPIO.output(24, GPIO.LOW)
             time.sleep(ingredient2)
-            GPIO.output(22, GPIO.HIGH)
+            GPIO.output(24, GPIO.HIGH)
 
     # Define Pump Ingredient String
     default_string = "(Choose Your Poison)"
