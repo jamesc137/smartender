@@ -1,0 +1,35 @@
+{
+	"drinks": [{
+			"name": "Rum & Coke",
+			"ingredients": [{
+				"rum": 3
+			}, {
+				"coke": 6
+			}]
+		},
+		{
+			"name": "Screw Driver",
+			"ingredients": [{
+				"vodka": 3
+			}, {
+				"oj": 6
+			}]
+		},
+		{
+			"name": "Mimosa",
+			"ingredients": [{
+				"champaigne": 3
+			}, {
+				"oj": 6
+			}]
+		},
+		{
+			"name": "Tequila Sunrise",
+			"ingredients": [{
+				"tequila": 3
+			}, {
+				"oj": 6
+			}]
+		}
+	]
+}

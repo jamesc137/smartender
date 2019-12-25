@@ -22,8 +22,4 @@ GPIO.output(23, GPIO.HIGH)
 GPIO.output(24, GPIO.HIGH)
 GPIO.output(25, GPIO.HIGH)
 
-# Orange
-GPIO.output(17, GPIO.LOW)
-time.sleep(5)
-GPIO.output(17, GPIO.HIGH)
-time.sleep(1)
+GPIO.cleanup()

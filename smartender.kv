@@ -4,80 +4,440 @@
     do_default_tab: False
 
     TabbedPanelItem:
-        text: 'Make Drinks'
+        text: 'Drink Menu'
         BoxLayout:
+            size_hint: 1, 0.5
             orientation: 'horizontal'
-            Label:
+            Button:
+                text: 'Mimosa'
+                on_release: root.make_drink('mimosa')
+            Button:
                 text: 'Tequila Sunrise'
+                on_release: root.make_drink('tequila_sunrise')
+            Button:
+                text: 'Screw Driver'
+                on_release: root.make_drink('screw_driver')
+            Button:
+                text: 'Rum & Coke'
+                on_release: root.make_drink('rum_and_coke')
+
+    TabbedPanelItem:
+        text: 'Setup'
+        BoxLayout:
+            orientation: 'vertical'
             Label:
-                text: 'Vodka Tonic'
-
-    TabbedPanelItem:
-        text: 'Configure'
-        BoxLayout:
-            orientation: 'horizontal'
-            BoxLayout:
-                orientation: 'vertical'
-                Label:
-                    text: 'Vodka'
-                Label:
-                    text: 'Gin'
-                Label:
-                    text: 'Rum'
-            BoxLayout:
-                orientation: 'vertical'
-                Label:
-                    text: 'Tequila'
-                Label:
-                    text: 'Whiskey'
-                Label:
-                    text: 'Brandy'
-            BoxLayout:
-                orientation: 'vertical'
-                Label:
-                    text: 'Tonic'
-                Label:
-                    text: 'Sprite'
-                Label:
-                    text: 'Coke'
-            BoxLayout:
-                orientation: 'vertical'
-                Label:
-                    text: 'Orange Juice'
-                Label:
-                    text: 'Lemonade'
-                Label:
-                    text: 'Margarita Mix'
-
-    TabbedPanelItem:
-        text: 'Help'
-        BoxLayout:
+                text: 'Getting Started:'
             Label:
-                text: 'Second tab content area'
-            Button:
-                text: 'Button that does nothing'
-                
-    TabbedPanelItem:
-        text: 'Debug'
-        BoxLayout:
-            orientation: 'horizontal'
-            Button:
-                text: 'Test Pump 1'
-                size_hint: 1, 0.5
-                on_press: root.activate_pump()
-            Button:
-                text: 'Test Pump 2'
-                size_hint: 1, 0.5
-            Button:
-                text: 'Test Pump 3'
-                size_hint: 1, 0.5
-            Button:
-                text: 'Test Pump 4'
-                size_hint: 1, 0.5
-            Button:
-                text: 'Test Pump 5'
-                size_hint: 1, 0.5
-            Button:
-                text: 'Test Pump 6'
-                size_hint: 1, 0.5
+                text: 'Step One - Setup Each Pump'
+            Label:
+                text: 'Step Two - `Ready` the Pumps'
+            Label:
+                text: 'To pre-fill Smartender pumps with liquid \nplace a cup in the Smartender and then select `Ready Pump`. \nAfter each use you may want to empty the pumps. \nTo do this place a cup in the Smartender. \nRemove the hoses on the back from liquid containers then select `Empty Pumps`.'
+            BoxLayout:
+                orientation: 'horizontal'
+                Button:
+                    text: 'Ready Pumps'
+                    size_hint: (.5, .5)
+                Button:
+                    text: 'Empty Pumps'
+                    size_hint: (.5, .5)
 
+    TabbedPanelItem:
+        text: 'Pump 1'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: root.pump_1_status
+                font_size: 80
+            BoxLayout:
+                orientation: 'horizontal'
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Vodka'
+                        on_press: root.set_pump_one('pump_1', 'vodka')
+                        on_release: root.change_text('pump_1', 'vodka')
+                    Button:
+                        text: 'Gin'
+                        on_press: root.set_pump_one('pump_1', 'gin')
+                        on_release: root.change_text('pump_1', 'gin')
+                    Button:
+                        text: 'Rum'
+                        on_press: root.set_pump_one('pump_1', 'rum')
+                        on_release: root.change_text('pump_1', 'rum')
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Tequila'
+                        on_press: root.set_pump_one('pump_1', 'tequila')
+                        on_release: root.change_text('pump_1', 'tequila')
+                    Button:
+                        text: 'Whiskey'
+                        on_press: root.set_pump_one('pump_1', 'whiskey')
+                        on_release: root.change_text('pump_1', 'whiskey')
+                    Button:
+                        text: 'Brandy'
+                        on_press: root.set_pump_one('pump_1', 'brandy')
+                        on_release: root.change_text('pump_1', 'brandy')
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Tonic'
+                        on_press: root.set_pump_one('pump_1', 'tonic')
+                        on_release: root.change_text('pump_1', 'tonic')
+                    Button:
+                        text: 'Sprite'
+                        on_press: root.set_pump_one('pump_1', 'sprite')
+                        on_release: root.change_text('pump_1', 'sprite')
+                    Button:
+                        text: 'Coke'
+                        on_press: root.set_pump_one('pump_1', 'coke')
+                        on_release: root.change_text('pump_1', 'coke')
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Orange Juice'
+                        on_press: root.set_pump_one('pump_1', 'oj')
+                        on_release: root.change_text('pump_1', 'oj')
+                    Button:
+                        text: 'Lemonade'
+                        on_press: root.set_pump_one('pump_1', 'lemonade')
+                        on_release: root.change_text('pump_1', 'lemonade')
+                    Button:
+                        text: 'Margarita Mix'
+                        on_press: root.set_pump_one('pump_1', 'margarita')
+                        on_release: root.change_text('pump_1', 'margarita')
+
+
+    TabbedPanelItem:
+        text: 'Pump 2'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: root.pump_2_status
+                font_size: 80
+            BoxLayout:
+                orientation: 'horizontal'
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Vodka'
+                        on_press: root.set_pump_one('pump_2', 'vodka')
+                        on_release: root.change_text('pump_2', 'vodka')
+                    Button:
+                        text: 'Gin'
+                        on_press: root.set_pump_one('pump_2', 'gin')
+                        on_release: root.change_text('pump_2', 'gin')
+                    Button:
+                        text: 'Rum'
+                        on_press: root.set_pump_one('pump_2', 'rum')
+                        on_release: root.change_text('pump_2', 'rum')
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Tequila'
+                        on_press: root.set_pump_one('pump_2', 'tequila')
+                        on_release: root.change_text('pump_2', 'tequila')
+                    Button:
+                        text: 'Whiskey'
+                        on_press: root.set_pump_one('pump_2', 'whiskey')
+                        on_release: root.change_text('pump_2', 'whiskey')
+                    Button:
+                        text: 'Brandy'
+                        on_press: root.set_pump_one('pump_2', 'brandy')
+                        on_release: root.change_text('pump_2', 'brandy')
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Tonic'
+                        on_press: root.set_pump_one('pump_2', 'tonic')
+                        on_release: root.change_text('pump_2', 'tonic')
+                    Button:
+                        text: 'Sprite'
+                        on_press: root.set_pump_one('pump_2', 'sprite')
+                        on_release: root.change_text('pump_2', 'sprite')
+                    Button:
+                        text: 'Coke'
+                        on_press: root.set_pump_one('pump_2', 'coke')
+                        on_release: root.change_text('pump_2', 'coke')
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Orange Juice'
+                        on_press: root.set_pump_one('pump_2', 'oj')
+                        on_release: root.change_text('pump_2', 'oj')
+                    Button:
+                        text: 'Lemonade'
+                        on_press: root.set_pump_one('pump_2', 'lemonade')
+                        on_release: root.change_text('pump_2', 'lemonade')
+                    Button:
+                        text: 'Margarita Mix'
+                        on_press: root.set_pump_one('pump_2', 'margarita')
+                        on_release: root.change_text('pump_2', 'margarita')
+
+
+    TabbedPanelItem:
+        text: 'Pump 3'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: root.pump_3_status
+                font_size: 80
+            BoxLayout:
+                orientation: 'horizontal'
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Vodka'
+                        on_press: root.set_pump_one('pump_3', 'vodka')
+                        on_release: root.change_text('pump_3', 'vodka')
+                    Button:
+                        text: 'Gin'
+                        on_press: root.set_pump_one('pump_3', 'gin')
+                        on_release: root.change_text('pump_3', 'gin')
+                    Button:
+                        text: 'Rum'
+                        on_press: root.set_pump_one('pump_3', 'rum')
+                        on_release: root.change_text('pump_3', 'rum')
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Tequila'
+                        on_press: root.set_pump_one('pump_3', 'tequila')
+                        on_release: root.change_text('pump_3', 'tequila')
+                    Button:
+                        text: 'Whiskey'
+                        on_press: root.set_pump_one('pump_3', 'whiskey')
+                        on_release: root.change_text('pump_3', 'whiskey')
+                    Button:
+                        text: 'Brandy'
+                        on_press: root.set_pump_one('pump_3', 'brandy')
+                        on_release: root.change_text('pump_3', 'brandy')
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Tonic'
+                        on_press: root.set_pump_one('pump_3', 'tonic')
+                        on_release: root.change_text('pump_3', 'tonic')
+                    Button:
+                        text: 'Sprite'
+                        on_press: root.set_pump_one('pump_3', 'sprite')
+                        on_release: root.change_text('pump_3', 'sprite')
+                    Button:
+                        text: 'Coke'
+                        on_press: root.set_pump_one('pump_3', 'coke')
+                        on_release: root.change_text('pump_3', 'coke')
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Orange Juice'
+                        on_press: root.set_pump_one('pump_3', 'oj')
+                        on_release: root.change_text('pump_3', 'oj')
+                    Button:
+                        text: 'Lemonade'
+                        on_press: root.set_pump_one('pump_3', 'lemonade')
+                        on_release: root.change_text('pump_3', 'lemonade')
+                    Button:
+                        text: 'Margarita Mix'
+                        on_press: root.set_pump_one('pump_3', 'margarita')
+                        on_release: root.change_text('pump_3', 'margarita')
+
+
+    TabbedPanelItem:
+        text: 'Pump 4'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: root.pump_4_status
+                font_size: 80
+            BoxLayout:
+                orientation: 'horizontal'
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Vodka'
+                        on_press: root.set_pump_one('pump_4', 'vodka')
+                        on_release: root.change_text('pump_4', 'vodka')
+                    Button:
+                        text: 'Gin'
+                        on_press: root.set_pump_one('pump_4', 'gin')
+                        on_release: root.change_text('pump_4', 'gin')
+                    Button:
+                        text: 'Rum'
+                        on_press: root.set_pump_one('pump_4', 'rum')
+                        on_release: root.change_text('pump_4', 'rum')
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Tequila'
+                        on_press: root.set_pump_one('pump_4', 'tequila')
+                        on_release: root.change_text('pump_4', 'tequila')
+                    Button:
+                        text: 'Whiskey'
+                        on_press: root.set_pump_one('pump_4', 'whiskey')
+                        on_release: root.change_text('pump_4', 'whiskey')
+                    Button:
+                        text: 'Brandy'
+                        on_press: root.set_pump_one('pump_4', 'brandy')
+                        on_release: root.change_text('pump_4', 'brandy')
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Tonic'
+                        on_press: root.set_pump_one('pump_4', 'tonic')
+                        on_release: root.change_text('pump_4', 'tonic')
+                    Button:
+                        text: 'Sprite'
+                        on_press: root.set_pump_one('pump_4', 'sprite')
+                        on_release: root.change_text('pump_4', 'sprite')
+                    Button:
+                        text: 'Coke'
+                        on_press: root.set_pump_one('pump_4', 'coke')
+                        on_release: root.change_text('pump_4', 'coke')
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Orange Juice'
+                        on_press: root.set_pump_one('pump_4', 'oj')
+                        on_release: root.change_text('pump_4', 'oj')
+                    Button:
+                        text: 'Lemonade'
+                        on_press: root.set_pump_one('pump_4', 'lemonade')
+                        on_release: root.change_text('pump_4', 'lemonade')
+                    Button:
+                        text: 'Margarita Mix'
+                        on_press: root.set_pump_one('pump_4', 'margarita')
+                        on_release: root.change_text('pump_4', 'margarita')
+
+    TabbedPanelItem:
+        text: 'Pump 5'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: root.pump_5_status
+                font_size: 80
+            BoxLayout:
+                orientation: 'horizontal'
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Vodka'
+                        on_press: root.set_pump_one('pump_5', 'vodka')
+                        on_release: root.change_text('pump_5', 'vodka')
+                    Button:
+                        text: 'Gin'
+                        on_press: root.set_pump_one('pump_5', 'gin')
+                        on_release: root.change_text('pump_5', 'gin')
+                    Button:
+                        text: 'Rum'
+                        on_press: root.set_pump_one('pump_5', 'rum')
+                        on_release: root.change_text('pump_5', 'rum')
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Tequila'
+                        on_press: root.set_pump_one('pump_5', 'tequila')
+                        on_release: root.change_text('pump_5', 'tequila')
+                    Button:
+                        text: 'Whiskey'
+                        on_press: root.set_pump_one('pump_5', 'whiskey')
+                        on_release: root.change_text('pump_5', 'whiskey')
+                    Button:
+                        text: 'Brandy'
+                        on_press: root.set_pump_one('pump_5', 'brandy')
+                        on_release: root.change_text('pump_5', 'brandy')
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Tonic'
+                        on_press: root.set_pump_one('pump_5', 'tonic')
+                        on_release: root.change_text('pump_5', 'tonic')
+                    Button:
+                        text: 'Sprite'
+                        on_press: root.set_pump_one('pump_5', 'sprite')
+                        on_release: root.change_text('pump_5', 'sprite')
+                    Button:
+                        text: 'Coke'
+                        on_press: root.set_pump_one('pump_5', 'coke')
+                        on_release: root.change_text('pump_5', 'coke')
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Orange Juice'
+                        on_press: root.set_pump_one('pump_5', 'oj')
+                        on_release: root.change_text('pump_5', 'oj')
+                    Button:
+                        text: 'Lemonade'
+                        on_press: root.set_pump_one('pump_5', 'lemonade')
+                        on_release: root.change_text('pump_5', 'lemonade')
+                    Button:
+                        text: 'Margarita Mix'
+                        on_press: root.set_pump_one('pump_5', 'margarita')
+                        on_release: root.change_text('pump_5', 'margarita')
+
+
+    TabbedPanelItem:
+        text: 'Pump 6'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: root.pump_6_status
+                font_size: 80
+            BoxLayout:
+                orientation: 'horizontal'
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Vodka'
+                        on_press: root.set_pump_one('pump_6', 'vodka')
+                        on_release: root.change_text('pump_6', 'vodka')
+                    Button:
+                        text: 'Gin'
+                        on_press: root.set_pump_one('pump_6', 'gin')
+                        on_release: root.change_text('pump_6', 'gin')
+                    Button:
+                        text: 'Rum'
+                        on_press: root.set_pump_one('pump_6', 'rum')
+                        on_release: root.change_text('pump_6', 'rum')
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Tequila'
+                        on_press: root.set_pump_one('pump_6', 'tequila')
+                        on_release: root.change_text('pump_6', 'tequila')
+                    Button:
+                        text: 'Whiskey'
+                        on_press: root.set_pump_one('pump_6', 'whiskey')
+                        on_release: root.change_text('pump_6', 'whiskey')
+                    Button:
+                        text: 'Brandy'
+                        on_press: root.set_pump_one('pump_6', 'brandy')
+                        on_release: root.change_text('pump_6', 'brandy')
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Tonic'
+                        on_press: root.set_pump_one('pump_6', 'tonic')
+                        on_release: root.change_text('pump_6', 'tonic')
+                    Button:
+                        text: 'Sprite'
+                        on_press: root.set_pump_one('pump_6', 'sprite')
+                        on_release: root.change_text('pump_6', 'sprite')
+                    Button:
+                        text: 'Coke'
+                        on_press: root.set_pump_one('pump_6', 'coke')
+                        on_release: root.change_text('pump_6', 'coke')
+                BoxLayout:
+                    orientation: 'vertical'
+                    Button:
+                        text: 'Orange Juice'
+                        on_press: root.set_pump_one('pump_6', 'oj')
+                        on_release: root.change_text('pump_6', 'oj')
+                    Button:
+                        text: 'Lemonade'
+                        on_press: root.set_pump_one('pump_6', 'lemonade')
+                        on_release: root.change_text('pump_6', 'lemonade')
+                    Button:
+                        text: 'Margarita Mix'
+                        on_press: root.set_pump_one('pump_6', 'margarita')
+                        on_release: root.change_text('pump_6', 'margarita')
